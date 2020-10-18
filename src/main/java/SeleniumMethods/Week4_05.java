@@ -12,7 +12,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Week4_05 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().fullscreen();
@@ -30,7 +30,7 @@ public class Week4_05 {
 		String text = alert.getText();
 		System.out.println(text);
 		alert.accept();
-
+Thread.sleep(5000);
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("name")));
 
